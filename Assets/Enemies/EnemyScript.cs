@@ -4,44 +4,68 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public int movementSpeed;
+    
     public GameObject body;
     private Rigidbody2D rb;
 
-    public float wallCheckDis;
+    // characteristics
+    [SerializeField] int movementSpeed;
+    [SerializeField] int drag;
 
+    [SerializeField] ScriptableObject objData;
+
+    // path following
     private Vector2 directionMotion;
-    public Vector2 TargetPos;
+    private Vector2 TargetPos;
     private bool hasPath;
+    public float wallCheckDis;
+    public float difOffset;
+    private int layer; 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = body.GetComponent<Rigidbody2D>();
+        rb.drag = 10;
+
+        layer = LayerMask.GetMask("Wall");
     }
 
-    public Vector2 getTargetPos()
+    Vector2 getTargetPos()
     {
-
+        //objData.getRandomTarget();
         hasPath = true;
         return new Vector2();
     }
 
-    public void followPath()
+    bool checkWall() => (Physics2D.Raycast((Vector2)transform.position, directionMotion, wallCheckDis, layer)) ? true : false;
+
+    void followPath()
     {
         // Get direction of motion in x
         float xDif = TargetPos.x - gameObject.transform.position.x;
         float yDif = TargetPos.y - gameObject.transform.position.y;
-        directionMotion = new Vector2(Mathf.Abs(xDif) / xDif, 0);
+
+        // checks to see if enemy completed path
+        if (Mathf.Abs(xDif) < difOffset && Mathf.Abs(yDif) < difOffset)
+        {
+            hasPath = false;
+            return;
+        }
+
+        directionMotion = new Vector2(Mathf.Abs(xDif) / xDif, 0); // sets direction of motion in the x direction by default
 
         // Check to make sure there isnt a wall there
-        Physics2D.Raycast((Vector2)transform.position, directionMotion * wallCheckDis, wallCheckDis);
+        bool isWall = checkWall();
+        if (isWall || Mathf.Abs(xDif) < difOffset)
+        {
+            directionMotion = new Vector2(0, Mathf.Abs(yDif) / yDif);
+        }
 
-
-
+        rb.AddForce(directionMotion * movementSpeed * Time.deltaTime, ForceMode2D.Impulse);
     }
 
-    private void movement()
+    void movement()
     {
         if (!hasPath) getTargetPos();
         else followPath();
@@ -50,6 +74,6 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        movement();
     }
 }
