@@ -2,40 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
-   // private Vector2 playerDirection;
-    public float speed;
+    public float moveSpeed = 5f;
 
-    public Rigidbody2D body;
+    private Rigidbody2D rb;
+    private Vector2 movement;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        //playerDirection = new Vector2();
-        float xInput = Input.GetAxisRaw("Horizontal");
-        float yInput = Input.GetAxisRaw("Vertical");
-
-        if(Mathf.Abs(xInput) > 0)
-        {
-            body.velocity = new Vector2(xInput * speed, body.velocity.y);
-        }
-        if(Mathf.Abs(yInput)>0)
-        {
-            body.velocity = new Vector2(body.velocity.x, yInput * speed);
-        }
-        Vector2 direction= new Vector2(xInput, yInput).normalized;
-
-        body.velocity = direction * speed;
-       
+        //user input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+   
 }
+
+    
+
+
+
+//pick up trash
+    public class Trash : MonoBehaviour
+    {
+        public Trash inTrash;
+        //the array/list to hold the trash
+        public List<Trash> trashItems = new List<Trash>();
+
+        public void AddTrash(Trash newTrash)
+        {
+            inTrash.AddTrash(newTrash);
+        }
+    }
+
