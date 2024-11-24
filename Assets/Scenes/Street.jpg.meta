@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6ef013b4086794285904861c0d11e3f0
+guid: 849ef1ea2c5264b7bb92127d563ce670
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4145100776150910970
-    second: Bottle_0
+      213: -692078636420456154
+    second: Street_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bottle_0
+      name: Street_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 100
-        width: 196
-        height: 432
+        x: 0
+        y: 0
+        width: 962
+        height: 962
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +114,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af7cba8b13b568930800000000000000
-      internalID: 4145100776150910970
+      spriteID: 621a58f952e3566f0800000000000000
+      internalID: -692078636420456154
       vertices: []
       indices: 
       edges: []
@@ -130,8 +130,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Bottle_0: 4145100776150910970
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
