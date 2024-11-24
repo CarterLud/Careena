@@ -30,20 +30,4 @@ public class PlayerMovement : MonoBehaviour
    
 }
 
-    
-
-
-
-//pick up trash
-    public class Trash : MonoBehaviour
-    {
-        public Trash inTrash;
-        //the array/list to hold the trash
-        public List<Trash> trashItems = new List<Trash>();
-
-        public void AddTrash(Trash newTrash)
-        {
-            inTrash.AddTrash(newTrash);
-        }
-    }
 
