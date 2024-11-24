@@ -17,6 +17,7 @@ public class Garbage : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(Globals.socialStatus);
         if (Input.GetKeyDown(KeyCode.F) && txt.activeSelf)
         {
             for (int i = 0; i < Globals.inventory.Count; i++)
