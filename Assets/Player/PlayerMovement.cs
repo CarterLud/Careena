@@ -8,12 +8,14 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private Vector2 movement;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         //user input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
     }
 
     void FixedUpdate()
@@ -29,4 +32,5 @@ public class PlayerMovement : MonoBehaviour
     }
    
 }
+    
 
