@@ -12,12 +12,12 @@ public class Garbage : MonoBehaviour
 
     private void Start()
     {
+        txt.SetActive(false);
         txt.GetComponent<Text>().text = "Press F to access " + ((typeOfGarbageAccepting == 1) ? "Garbage" : (typeOfGarbageAccepting == 2) ? "Recycling" : "Compost");
     }
 
     private void Update()
     {
-        Debug.Log(Globals.socialStatus);
         if (Input.GetKeyDown(KeyCode.F) && txt.activeSelf)
         {
             for (int i = 0; i < Globals.inventory.Count; i++)
