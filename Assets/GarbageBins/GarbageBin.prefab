@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfGarbageAccepting: 1
   txt: {fileID: 0}
+  score: 0
 --- !u!50 &6775962255107506095
 Rigidbody2D:
   serializedVersion: 4
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeOfGarbageAccepting: 1
   txt: {fileID: 6153578357587579888}
+  score: 25
 --- !u!1 &4263926933473687877
 GameObject:
   m_ObjectHideFlags: 0
