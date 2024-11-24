@@ -24,6 +24,14 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        if(movement.x > 0)
+        {
+            sr.flipX = false;
+        }
+        else if(movement.x <0)
+        {
+            sr.flipX = true;
+        }
     }
 
     void FixedUpdate()
