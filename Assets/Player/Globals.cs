@@ -7,4 +7,5 @@ public class Globals : MonoBehaviour
     public static int socialStatus;
     public static List<int> inventory = new List<int>();
     public static int maxInventory = 10;
+    public static int highScore;
 }
