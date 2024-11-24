@@ -12,20 +12,25 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] int movementSpeed;
     [SerializeField] int drag;
 
-    [SerializeField] ScriptableObject objData;
+    [SerializeField] ObjData objData;
 
     // path following
+    [SerializeField] List<GameObject> pos;
     private Vector2 directionMotion;
     private Vector2 TargetPos;
     private bool hasPath;
     public float wallCheckDis;
     public float difOffset;
-    private int layer; 
+    private int layer;
+
+    // timer
+    public float maxTimer;
+    private float currentTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = body.GetComponent<Rigidbody2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         rb.drag = 10;
 
         layer = LayerMask.GetMask("Wall");
@@ -33,7 +38,7 @@ public class EnemyScript : MonoBehaviour
 
     Vector2 getTargetPos()
     {
-        //objData.getRandomTarget();
+        TargetPos = objData.getRandomTarget(pos);
         hasPath = true;
         return new Vector2();
     }
@@ -63,6 +68,18 @@ public class EnemyScript : MonoBehaviour
         }
 
         rb.AddForce(directionMotion * movementSpeed * Time.deltaTime, ForceMode2D.Impulse);
+    }
+
+    void throwLitter()
+    {
+        if (currentTimer < 0)
+        {
+            GameObject litterType = objData.getLitterObj();
+
+            var litter = Instantiate(litterType);
+            return;
+        }
+        currentTimer -= Time.deltaTime;
     }
 
     void movement()

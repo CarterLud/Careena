@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551d9f9c30ad247148c6225bca3aed5b, type: 3}
+  m_Name: Compost
+  m_EditorClassIdentifier: 
+  possibleSprites:
+  - {fileID: 7293598183456022363, guid: db8dce10c55f740e7b24cb44ca60c583, type: 3}
+  - {fileID: 7381965769198725172, guid: 26c30a1648b4740f3977cdc7162ba132, type: 3}
+  - {fileID: 6048862160296339182, guid: 6932b414ee9d34ffabc94d3523c3a609, type: 3}
+  typeOfGarbage: 3
