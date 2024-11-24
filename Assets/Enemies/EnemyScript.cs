@@ -67,7 +67,7 @@ public class EnemyScript : MonoBehaviour
             directionMotion = new Vector2(0, Mathf.Abs(yDif) / yDif);
         }
 
-        rb.AddForce(directionMotion * movementSpeed * Time.deltaTime, ForceMode2D.Impulse);
+        rb.AddForce(directionMotion * movementSpeed * Time.deltaTime * rb.mass, ForceMode2D.Impulse);
     }
 
     void throwLitter()
@@ -77,7 +77,7 @@ public class EnemyScript : MonoBehaviour
             GameObject litterType = objData.getLitterObj();
 
             currentTimer = maxTimer;
-            Instantiate(litterType);
+            Instantiate(litterType, transform.position, Quaternion.identity);
             return;
         }
         currentTimer -= Time.deltaTime;

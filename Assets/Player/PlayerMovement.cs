@@ -17,12 +17,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject goTime;
     public GameObject goScore;
     public GameObject goReset;
+    public GameObject goInventory;
 
     public GameObject goResetScore;
     public GameObject goResetHighScore;
 
     private Text time;
     private Text score;
+    private Text inventory;
 
 
     void Start()
@@ -32,10 +34,12 @@ public class PlayerMovement : MonoBehaviour
 
         time = goTime.GetComponent<Text>();
         score = goScore.GetComponent<Text>();
+        inventory = goInventory.GetComponent<Text>();
 
         goTime.SetActive(true);
         goScore.SetActive(true);
         goReset.SetActive(false);
+        Time.timeScale = 1;
 
     }
 
@@ -51,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
 
     void updateScreen()
     {
+        inventory.text = "items: " + Globals.inventory.Count;
+
         timeToSurvive -= Time.deltaTime;
         score.text = "Social Status: " + Globals.socialStatus;
         time.text = "Time Left: " + (int)timeToSurvive;
