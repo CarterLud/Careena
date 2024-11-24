@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a6d2ac05802491cbdb7873ed0223d5, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  litter: []
+  litter:
+  - {fileID: 8204812591851445388, guid: 5b6892c13d93d48b18a538f1a1a2ad4a, type: 3}
+  - {fileID: 3583762687719669482, guid: 3c0d81188d2a14d1b960b7b38db1f6e7, type: 3}
+  - {fileID: 4046194257523827453, guid: 8b8d5dac978654d509b608318a7fdb2b, type: 3}

@@ -76,7 +76,8 @@ public class EnemyScript : MonoBehaviour
         {
             GameObject litterType = objData.getLitterObj();
 
-            var litter = Instantiate(litterType);
+            currentTimer = maxTimer;
+            Instantiate(litterType);
             return;
         }
         currentTimer -= Time.deltaTime;
@@ -92,5 +93,6 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         movement();
+        throwLitter();
     }
 }

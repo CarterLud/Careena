@@ -173,8 +173,10 @@ MonoBehaviour:
   movementSpeed: 10
   drag: 0
   objData: {fileID: 11400000, guid: 9d4337f6a8c9b4feeb13e7dda54784a5, type: 2}
+  pos: []
   wallCheckDis: 0.5
   difOffset: 0
+  maxTimer: 2
 --- !u!50 &5195346992990809797
 Rigidbody2D:
   serializedVersion: 4
