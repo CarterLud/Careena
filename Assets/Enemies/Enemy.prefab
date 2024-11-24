@@ -48,13 +48,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 0}
-  movementSpeed: 10
+  movementSpeed: 5
   drag: 0
   objData: {fileID: 11400000, guid: 9d4337f6a8c9b4feeb13e7dda54784a5, type: 2}
-  pos: []
+  pos:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   wallCheckDis: 0.5
   difOffset: 0
-  maxTimer: 2
+  maxTimer: 5
 --- !u!50 &5195346992990809797
 Rigidbody2D:
   serializedVersion: 4
@@ -81,7 +86,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &6338972269824278452
 SpriteRenderer:
   m_ObjectHideFlags: 0

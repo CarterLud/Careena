@@ -7,6 +7,8 @@ public class trashScript : MonoBehaviour
     public trashData td;
     private Sprite sp;
 
+    bool isDestroying;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,9 @@ public class trashScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" && Globals.inventory.Count < Globals.maxInventory)
+        if (collision.tag == "Player" && Globals.inventory.Count < Globals.maxInventory && !isDestroying)
         {
+            isDestroying = true;
             Globals.inventory.Add(td.typeOfGarbage);
             Destroy(gameObject);
         }
