@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551d9f9c30ad247148c6225bca3aed5b, type: 3}
+  m_Name: Recycling
+  m_EditorClassIdentifier: 
+  possibleSprites:
+  - {fileID: 4145100776150910970, guid: 6ef013b4086794285904861c0d11e3f0, type: 3}
+  - {fileID: -872455447615199857, guid: 901e95f6cba244ef288f9ceefddce6ac, type: 3}
+  - {fileID: 2045492094208909694, guid: a67e7e2491e8842b2969f9e0b7d53285, type: 3}
+  typeOfGarbage: 2

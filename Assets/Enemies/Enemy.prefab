@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5383602093250714799}
   - component: {fileID: 6986477927107240757}
-  - component: {fileID: 7696093997672796049}
+  - component: {fileID: 1859457925800318412}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -87,22 +87,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &7696093997672796049
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!58 &1859457925800318412
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6253041017446254125}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -110,10 +104,25 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &9083526003834733536
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5911241612633248920}
   - component: {fileID: 3104079472932555376}
+  - component: {fileID: 5195346992990809797}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -159,7 +169,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4b7ca3698314efab2e6441c74de99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
   body: {fileID: 6253041017446254125}
+  movementSpeed: 10
+  drag: 0
+  objData: {fileID: 11400000, guid: 9d4337f6a8c9b4feeb13e7dda54784a5, type: 2}
   wallCheckDis: 0.5
-  TargetPos: {x: 0, y: 0}
+  difOffset: 0
+--- !u!50 &5195346992990809797
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9083526003834733536}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
