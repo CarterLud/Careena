@@ -16,9 +16,9 @@ public class trashScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && Globals.inventory.Count < Globals.maxInventory)
         {
-            Globals.inventory.Add(td.typeOfGarbage, sp);
+            Globals.inventory.Add(td.typeOfGarbage);
             Destroy(gameObject);
         }
     }
